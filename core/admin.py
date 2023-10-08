@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import User, Product, CartOrder, Category, Vandor, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
+from core.models import User, Product, CartOrder, Vandor, Category, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['username', 'email', 'bio']

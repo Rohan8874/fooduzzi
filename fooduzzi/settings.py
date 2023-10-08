@@ -133,6 +133,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'core.User'  # Replace 'core' with the name of your app where the custom User model is defined
 
 
 JAZZMIN_SETTINGS = {
@@ -141,5 +142,3 @@ JAZZMIN_SETTINGS = {
     'site_logo': "images/logo.png",
     'copyright':"Fooduzzi_Shop.com",
 }
-
-AUTH_USER_MODEL = 'core.User'
