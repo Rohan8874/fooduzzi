@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from shortuuid.django_fields import ShortUUIDField
 from django.utils.safestring import mark_safe
 from django.contrib.auth.models import User
-
+from core.models import User
 
 STATUS_CHOICE = {
     ("procrss", "Processing"),
@@ -148,7 +148,9 @@ class CartOrder(models.Model):
 
 class CartOrderItems(models.Model):
     order =models.ForeignKey(CartOrder, on_delete=models.CASCADE)
-    invoice_no = models.CharField(max_length=200)
+    # invoice_no = models.CharField(max_length=200)
+    invoice_no = models.IntegerField(default=0)
+
     product_status = models.CharField(max_length=200)
     item = models.CharField(max_length=200)
     image = models.ImageField(max_length=200)

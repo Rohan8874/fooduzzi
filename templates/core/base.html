@@ -89,21 +89,23 @@
                     </ul>
                   </div>
                   <div class="rd-navbar-main">
-                    <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                      </li>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Login</a>
-                    </li>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a></li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a></li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a></li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a></li>
+                        <li class="rd-nav-item rd-nav-dropdown">
+                            <a class="rd-nav-link" href="#">Account</a>
+                            <!-- Dropdown Menu -->
+                            <ul class="rd-dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="{% url 'core:logout' %}">Logout</a></li>
+                            </ul>
+                        </li>
                     </ul>
                   </div>
+                
                 </div>
                 <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
                   <div class="project-hamburger"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
@@ -167,6 +169,7 @@
                 </div>
               </div>
             </div>
+            
           </nav>
         </div>
       </header>
@@ -275,6 +278,22 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.rd-nav-item.rd-nav-dropdown').hover(
+            function() {
+                $(this).addClass('active');
+                $('.rd-dropdown-menu', this).slideDown();
+            },
+            function() {
+                $(this).removeClass('active');
+                $('.rd-dropdown-menu', this).slideUp();
+            }
+        );
+    });
+</script>
+
     <script src="{% static 'js/core.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <!-- coded by Himic-->
