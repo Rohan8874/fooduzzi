@@ -79,4 +79,10 @@ def logout_view(request):
 def account(request):
     return render(request, 'core/account.html')
 def contact(request):
-    return render(request, 'core/contact.html')
+    return render(request, 'core/contacts.html')
+
+def about_us(request):
+    return render(request, 'core/about-us.html')
+
+def faq(request):
+    return render(request, 'core/faq.html')
